@@ -14,12 +14,18 @@ void test() {
   //   print("$name is Not Valid");
   // }
 
-   var age = 20; 
-   final minusAge = age--; 
-   print("Minus Age is $minusAge");
-   print("Age is $age");
+  //  var age = 20; 
+  //  final minusAge = age--; 
+  //  print("Minus Age is $minusAge");
+  //  print("Age is $age");
    
-  
+   var names = ["Nitesh","Rakesh","Vikesh"];
+   final firstName = names[2];
+   final length = names.length;
+   print("Length of names is ${names.length}");
+  //  print(firstName);
+   names.add('Kajal');
+   print("Lenght of the names is ${names.length}");
   
 
 }
