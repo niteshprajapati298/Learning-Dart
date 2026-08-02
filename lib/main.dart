@@ -5,14 +5,23 @@ void main() {
 }
 
 void test() {
-  final name = "Nites";
-  if (name == "Nitesh") {
-    print("Print Name is $name");
-  } else if(name=="Nitesh Prajapati") {
-    print("Print Full Name is $name");
-  } else {
-    print("$name is Not Valid");
-  }
+  // final name = "Nites";
+  // if (name == "Nitesh") {
+  //   print("Print Name is $name");
+  // } else if(name=="Nitesh Prajapati") {
+  //   print("Print Full Name is $name");
+  // } else {
+  //   print("$name is Not Valid");
+  // }
+
+   var age = 20; 
+   final minusAge = age--; 
+   print("Minus Age is $minusAge");
+   print("Age is $age");
+   
+  
+  
+
 }
 
 class MyApp extends StatelessWidget {
