@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
-String getFullName(String firstName , String lastName){
-  return "$firstName $lastName";
-}
+
 void main() {
   runApp(const MyApp());
 }
 
+void test() {
+  final name = "Nites";
+  if (name == "Nitesh") {
+    print("Print Name is $name");
+  } else if(name=="Nitesh Prajapati") {
+    print("Print Full Name is $name");
+  } else {
+    print("$name is Not Valid");
+  }
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-     String ans = getFullName('Nitesh', 'Prajapati');
-  print(ans);
+    test(); // This widget is the root of your application.
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -32,7 +39,7 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: .fromSeed(seedColor: const Color.fromARGB(255, 8, 3, 16)),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 8, 3, 16)),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -71,6 +78,28 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void decrementCounter() {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      _counter--;
+    });
+  }
+
+  void multipleCounter() {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      _counter = _counter * 2;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -106,20 +135,49 @@ class _MyHomePageState extends State<MyHomePage> {
           // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
-          mainAxisAlignment: .center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('You have pushed the button this many times:'),
+            const Text('You have pushed the button this many times:',
+            style: TextStyle(
+              fontSize:  18,
+              color: Colors.green,
+              fontWeight: FontWeight.w500,
+            ),
+            ),
+          
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                color : Colors.yellow,
+                fontWeight: FontWeight.w500,
+                fontSize: 100
+                
+              ),
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      floatingActionButton: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          FloatingActionButton(
+            onPressed: _incrementCounter,
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ),
+          const SizedBox(width: 12),
+          FloatingActionButton(
+            onPressed: decrementCounter,
+            tooltip: 'Decrement',
+            child: const Icon(Icons.remove),
+          ),
+          const SizedBox(width: 12),
+          FloatingActionButton(
+            onPressed: multipleCounter,
+            tooltip: 'Muliply',
+            child: const Icon(Icons.close),
+          ),
+        ],
       ),
     );
   }
