@@ -1,9 +1,33 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
 }
+// optional checks in Dart
+void optionalList () {
+  List<String>?names = null;
 
+  final length = names?.length;
+//  final numberofNames = names.length;
+}
+ String? pickFirstNotNull(String? firstName, String? middleName , String? lastName ){
+  
+   // first not null value in the dart
+  // final firsNonNullValue = firstName ?? middleName ?? lastName;
+  // print(firsNonNullValue);
+ 
+  // if not null then assign a value by your own
+  // if value on the left hand side is null then take the value at the right side 
+  String? name = firstName;
+  name ??= middleName;
+  name ??= lastName;
+  return name; 
+
+
+}
 void test() {
   // final name = "Nites";
   // if (name == "Nitesh") {
@@ -34,13 +58,26 @@ void test() {
   //  print(birds);
 
   // Object 
-  var person = {
-    "age":20,
-    "name":"Nitesh",  
-  };
-  print(person);
-  person["age"] = "10";
-  print(person);
+  // var person = {
+  //   "age":20,
+  //   "name":"Nitesh",  
+  // };
+  // print(person);
+  // person["age"] = "10";
+  // print(person);
+
+  // String? name = null;
+  // print(name);
+  // name = "Nitesh";
+  // print(name);
+  final ans = pickFirstNotNull(null,null,"Nitesh");
+  print(ans);
+  List<String?>?names = ["Foo","Bar" ,null];
+ 
+
+  final names2 = ["Foo","Nitesh",null];
+  print(names);
+
 } 
 
 class MyApp extends StatelessWidget {
