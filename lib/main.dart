@@ -19,16 +19,29 @@ void test() {
   //  print("Minus Age is $minusAge");
   //  print("Age is $age");
    
-   var names = ["Nitesh","Rakesh","Vikesh"];
-   final firstName = names[2];
-   final length = names.length;
-   print("Length of names is ${names.length}");
-  //  print(firstName);
-   names.add('Kajal');
-   print("Lenght of the names is ${names.length}");
+  //  var names = ["Nitesh","Rakesh","Vikesh"];
+  //  final firstName = names[2];
+  //  final length = names.length;
+  //  print("Length of names is ${names.length}");
+  // //  print(firstName);
+  //  names.add('Kajal');
+  //  print("Lenght of the names is ${names.length}");
   
 
-}
+  // Set DataStructure 
+  //  final birds = {'Pigeon',"Parrot","Owl"};
+  //  birds.add("Pigoes");
+  //  print(birds);
+
+  // Object 
+  var person = {
+    "age":20,
+    "name":"Nitesh",  
+  };
+  print(person);
+  person["age"] = "10";
+  print(person);
+} 
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
