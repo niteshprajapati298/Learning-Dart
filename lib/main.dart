@@ -24,29 +24,49 @@ void main() {
 //   }
 // }
 
-class Human {
-  final String fullName;
-  final String lastName;
-  Human(this.fullName,this.lastName);
+// class Human {
+//   final String fullName;
+//   final String lastName;
+//   Human(this.fullName,this.lastName);
 
-  void run(){
-    print("${fullName} is Running");
-  }
+//   void run(){
+//     print("${fullName} is Running");
+//   }
+//   void breathe(){
+//     print("${lastName} is Breathing");
+//   }
+// }
+
+
+
+// Living Thing inheritance in dart
+
+abstract class LivingThing {
   void breathe(){
-    print("${lastName} is Breathing");
+    print("I am Breathing");
+  }
+  void move(){
+    print("I am moving");
   }
 }
 
-
+class Cat extends LivingThing {
+  
+}
 
 enum PersonProperties {
   firstName, lastName , age 
 }
 void test(){
-   final person = Human("Nitesh","Prajapati");
+  //  final person = LivingThing();
   // Human person;
-   person.run();
-   person.breathe();
+  //  person.run();
+  //  person.breathe();
+
+
+  final cat1 = Cat();
+  cat1.breathe();
+  cat1.move();
 
 
 
