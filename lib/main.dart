@@ -54,6 +54,17 @@ abstract class LivingThing {
   
 // }
 
+class Person {
+  final String firstName;
+  final String lastName;
+  Person(this.firstName,this.lastName);
+}
+extension FullName on Person {
+ String fullName () {
+  return "${firstName} ${lastName}";
+ }
+}
+
 // factory constructor 
 class Cat {
   final String name;
@@ -71,15 +82,31 @@ class Cat {
 
 }
 
+extension Run on Cat {
+  void run (){
+    print("$name is running");
+  }
+}
+
 enum PersonProperties {
   firstName, lastName , age 
 }
+
+
+// int multipliedBy2 (int a) => a * 2;
+
+
 void test(){
+
+  // final ans = multipliedBy2(5);
+  // print(ans);
   //  final person = LivingThing();
   // Human person;
   //  person.run();
   //  person.breathe();
-
+  // final p1 = Person("Kajal", "Prajapati");
+  // final fullName = p1.fullName();
+  // print(fullName);
 
   // final cat1 = Cat();
   // cat1.breathe();
@@ -98,6 +125,9 @@ void test(){
   //   print("Both are not Equal");
   // }
 
+  // extension
+   final cat1 = Cat("Fluffy");
+   cat1.run();
 
   // const name = 'foo';
   // const otherName = 'foo';
