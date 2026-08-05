@@ -50,8 +50,25 @@ abstract class LivingThing {
   }
 }
 
-class Cat extends LivingThing {
+// class Cat extends LivingThing {
   
+// }
+
+// factory constructor 
+class Cat {
+  final String name;
+  Cat(this.name);
+  // factory Cat.fluffBall(){
+  //   return Cat("Fluff Ball");
+  // }
+  @override
+  bool operator ==(covariant Cat other) {
+    return name == other.name;
+  }
+  @override
+  // TODO: implement hashCode
+  int get hashCode => name.hashCode;
+
 }
 
 enum PersonProperties {
@@ -64,10 +81,22 @@ void test(){
   //  person.breathe();
 
 
-  final cat1 = Cat();
-  cat1.breathe();
-  cat1.move();
+  // final cat1 = Cat();
+  // cat1.breathe();
+  // cat1.move();
 
+  //  final cat1 = Cat.fluffBall();
+  //  print(cat1.name);
+  
+
+  // operator oveloading
+  // final cat1 = Cat("July");
+  // final cat2 = Cat("July");
+  // if(cat1==cat2){
+  //   print("Both are equal");
+  // }else {
+  //   print("Both are not Equal");
+  // }
 
 
   // const name = 'foo';
