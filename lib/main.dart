@@ -1,9 +1,58 @@
 import 'package:flutter/material.dart';
-String getFullName(String firstName , String lastName){
+
+String getFullName(String firstName, String lastName) {
   return "$firstName $lastName";
 }
+
 void main() {
   runApp(const MyApp());
+}
+// enum AnimalType {cat,dog,bunny}
+// void test2 (AnimalType animalType){
+//   //  print(animalType);
+//   switch (animalType) {
+//     case AnimalType.bunny:
+//       print("Bunny");
+//       case AnimalType.cat:
+//       print("Cat");
+//       case AnimalType.dog:
+//       print("Dog");
+//       case AnimalType.cat:
+//       print("Cat 2");
+//       break;
+//     default:
+//   }
+// }
+
+class Human {
+  final String fullName;
+  final String lastName;
+  Human(this.fullName,this.lastName);
+
+  void run(){
+    print("${fullName} is Running");
+  }
+  void breathe(){
+    print("${lastName} is Breathing");
+  }
+}
+
+
+
+enum PersonProperties {
+  firstName, lastName , age 
+}
+void test(){
+   final person = Human("Nitesh","Prajapati");
+  // Human person;
+   person.run();
+   person.breathe();
+
+
+
+  // const name = 'foo';
+  // const otherName = 'foo';
+  print(PersonProperties.firstName);
 }
 
 class MyApp extends StatelessWidget {
@@ -12,8 +61,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-     String ans = getFullName('Nitesh', 'Prajapati');
-  print(ans);
+    // test2(AnimalType.cat);
+    test();
+    // String ans = getFullName('Nitesh', 'Prajapati');
+    // print(ans);
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
